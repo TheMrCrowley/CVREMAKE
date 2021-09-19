@@ -24,9 +24,16 @@
         &__subtitle
             font-size: 20px
 
-    .side__header
-        font-size: 24px
-
+    .side
+        &__header
+            font-size: 24px
+        &__link
+            &::before
+                left: -30px
+                height: 16px
+            &:hover
+                &::before
+                    width: 10%
     .education
         margin-bottom: 108px
         &__title
@@ -34,13 +41,6 @@
         &__descr
             font-size: 14px
             padding: 0
-        &__link
-            &::before
-                width: 2px
-                left: -30px
-            &:hover
-                &::before
-                    width: 10%
 
     .main
         &__header
@@ -55,6 +55,9 @@
         .code
             overflow-x: hidden
 
+    .footer__image
+        height: 90px
+
 @media screen and( max-width: 576px )
     .container
         width: 576px
@@ -64,6 +67,8 @@
             font-size: 38px
         &__subtitle
             font-size: 16px
+        &__content
+            height: 100%
         &-menu
             width: 50%
             display: block
@@ -131,12 +136,14 @@
         padding: 20px 30px
         flex-direction: row
         justify-content: space-between
-        .skills
-            .side__header
-                text-align: right
-            &__item
-                padding: 0 40px 0 0
-                background-position: right center
+
+    .skills
+        .side__header
+            text-align: right
+        &__item
+            padding: 0 40px 0 0
+            background-position: right center
+
     .education
         width: 50%
         margin: 0
@@ -144,6 +151,143 @@
             &::before
                 height: 18px
                 top: 0
+
+    .side__link
+        &::before
+            left: -30px
+            width: 2px
+        &:hover
+            &::before
+                width: 10%
     
     .main
         width: 100%
+
+    .contacts
+        display: flex
+        flex-direction: column
+        justify-content: center
+        &__item
+            padding: 0
+
+    .footer__content
+        height: 150px
+    .footer__image
+        height: 70px
+
+@media screen and ( max-width: 425px )
+    .container
+        width: 425px
+    
+    .header
+        &__title
+            font-size: 30px
+        &__subtitle
+            font-size: 14px
+
+    .header-menu__list
+        font-size: 14px
+
+    .aside
+        flex-direction: column
+        padding: 20px
+
+    .education
+        width: 100%
+        &__descr
+            padding-left: 20px
+        
+    .skills 
+        width: 100%
+        &__list
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: space-around
+        &__item
+            padding: 0
+            padding-left: 40px
+            width: 35%
+            background-position: left center
+
+    .side__link
+        display: inline-block
+        &::before
+            width: 0%
+            height: 2px
+            left: 0
+            top: 100%
+        &:hover
+            &::before
+                width: 100%
+
+    .main
+        padding: 20px
+        &__header
+            text-align: left
+
+    .quote
+        &::before
+            left: -20px
+        &::after
+            right: -20px
+        &:hover
+            &::before, &::after
+                width: 30%
+
+    .projects
+        &__wrapper
+            flex-direction: column
+            align-items: center
+        &__item
+            margin-bottom: 20px
+            width: 70%
+            &:nth-child(2)
+                margin: 0
+
+    .pre
+        font-size: 10px
+    
+    .footer__container
+        flex-direction: column
+    
+    .contacts
+        width: 100%
+        padding: 20px
+        text-align: center
+        &__list
+            display: flex
+            justify-content: space-around
+    
+    .footer__content
+        width: 100%
+        height: 100px
+
+@media screen and ( max-width: 375px )
+    .container
+        width: 375px
+    .header__title
+        font-size: 28px
+    .header__subtitle
+        font-size: 14px
+
+    .side__header
+        font-size: 20px
+
+    .education__title
+        font-size: 16px
+
+    .pre
+        font-size: 8px
+
+@media screen and ( max-width: 320px )
+    .container
+        width: 320px
+    .header__title
+        font-size: 24px
+    .header__subtitle
+        font-size: 10px
+
+    .footer__content
+        height: 80px
+    .footer__image
+        height: 50px   

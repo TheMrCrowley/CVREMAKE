@@ -10,26 +10,13 @@ window.addEventListener('DOMContentLoaded', () => {
         menuBtn.classList.toggle('burger__btn_active');
         menu.classList.toggle('header-menu_active');
         menuBtn.classList.toggle('burger__btn_rotate');
-        // if (menu.classList.contains('header-menu_active')) {
-        //     window.addEventListener('click', togleClasses);
-        // } else {
-        //     window.removeEventListener('click', togleClasses);
-        // }
     }
 
-    function clickOverflow(e) {
-        const target = e.target;
-        if (isOverflow(target)) {
-            console.log('here');
+    window.addEventListener('click', (e) => {
+        const isOverflow = e.target.classList;
+        if (!isOverflow.contains('header-menu__list') && !isOverflow.contains('burger__line') &&
+        !isOverflow.contains('burger__btn') && menu.classList.contains('header-menu_active')) {
+            togleClasses();
         }
-    }
-
-    function isOverflow(element) {
-        if (!(element.classList.contains('burger__btn') && element.classList.contains('burger__line') &&
-        element.classList.contains('header-menu__list'))) {
-            return false;
-        }
-        return true;
-    }
-    window.addEventListener('click', clickOverflow);
+    });
 });
